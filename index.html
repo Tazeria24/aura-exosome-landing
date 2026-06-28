@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA EXOSOME™ — Cellular Regenerative Serum</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        clinical: {
+                            50: '#f0f9f9',
+                            100: '#dcf2f2',
+                            800: '#114d4d',
+                            900: '#0b3030',
+                        },
+                        gold: {
+                            100: '#fdf9f0',
+                            500: '#d4af37',
+                            600: '#b89020',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glow-effect {
+            box-shadow: 0 0 40px -10px rgba(220, 242, 242, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased overflow-x-hidden">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-clinical-900 text-gold-100 text-xs tracking-widest text-center py-2 px-4 uppercase font-medium">
+        Discover the 2026 Scientific Breakthrough in Skincare • Free Global Shipping on All Orders
+    </div>
+
+    <!-- NAVIGATION -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Brand Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="font-serif text-2xl lg:text-3xl font-bold tracking-tight text-clinical-900">
+                        AURA <span class="font-light italic text-gold-600">EXOSOME</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#science" class="text-sm font-medium text-slate-600 hover:text-clinical-800 transition-colors">The Science</a>
+                    <a href="#ingredients" class="text-sm font-medium text-slate-600 hover:text-clinical-800 transition-colors">Ingredients</a>
+                    <a href="#benefits" class="text-sm font-medium text-slate-600 hover:text-clinical-800 transition-colors">Results</a>
+                    <a href="#routine" class="text-sm font-medium text-slate-600 hover:text-clinical-800 transition-colors">How to Use</a>
+                    <a href="#faq" class="text-sm font-medium text-slate-600 hover:text-clinical-800 transition-colors">FAQ</a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="#preorder" class="bg-clinical-800 hover:bg-clinical-900 text-white text-sm font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md shadow-clinical-800/10">
+                        Pre-Order Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-clinical-900 focus:outline-none p-2" aria-label="Toggle menu">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-white border-b border-slate-100 py-6 px-4 shadow-xl transition-all duration-300">
+            <div class="flex flex-col space-y-4">
+                <a href="#science" class="mobile-nav-link text-lg font-medium text-slate-700 py-2 border-b border-slate-50">The Science</a>
+                <a href="#ingredients" class="mobile-nav-link text-lg font-medium text-slate-700 py-2 border-b border-slate-50">Ingredients</a>
+                <a href="#benefits" class="mobile-nav-link text-lg font-medium text-slate-700 py-2 border-b border-slate-50">Results</a>
+                <a href="#routine" class="mobile-nav-link text-lg font-medium text-slate-700 py-2 border-b border-slate-50">How to Use</a>
+                <a href="#faq" class="mobile-nav-link text-lg font-medium text-slate-700 py-2">FAQ</a>
+                <a href="#preorder" class="mobile-nav-link bg-clinical-800 hover:bg-clinical-900 text-white text-center font-semibold py-4 rounded-full transition-all mt-4">
+                    Pre-Order Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative bg-white pt-8 pb-20 lg:pt-16 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                <!-- Hero Content -->
+                <div class="space-y-8 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-clinical-50 text-clinical-800 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase border border-clinical-100">
+                        <span class="flex h-2 w-2 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-clinical-800 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-clinical-800"></span>
+                        </span>
+                        <span>Now in High Demand: Biotech Skincare</span>
+                    </div>
+                    
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-clinical-900 leading-tight">
+                        Reprogram Your Skin's Age. <br>
+                        <span class="font-light italic text-gold-600">From Within.</span>
+                    </h1>
+                    
+                    <p class="text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        Aura Exosome™ is a clinical-grade, regenerative serum that utilizes plant-derived exosomes and pure Centella Asiatica to rebuild your skin’s barrier and stimulate collagen production at a cellular level.
+                    </p>
+
+                    <!-- Trust Stats -->
+                    <div class="grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 py-4 border-y border-slate-100">
+                        <div class="text-center lg:text-left">
+                            <p class="font-serif text-2xl font-bold text-clinical-800">557%</p>
+                            <p class="text-xs text-slate-500 uppercase tracking-wider font-medium">Trend Growth</p>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <p class="font-serif text-2xl font-bold text-clinical-800">10x</p>
+                            <p class="text-xs text-slate-500 uppercase tracking-wider font-medium">Deeper Repair</p>
+                        </div>
+                        <div class="text-center lg:text-left">
+                            <p class="font-serif text-2xl font-bold text-clinical-800">98%</p>
+                            <p class="text-xs text-slate-500 uppercase tracking-wider font-medium">Organic Source</p>
+                        </div>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+                        <a href="#preorder" class="w-full sm:w-auto bg-clinical-800 hover:bg-clinical-900 text-white text-base font-semibold py-4 px-8 rounded-full transition-all duration-300 shadow-lg shadow-clinical-800/20 text-center">
+                            Pre-Order — Save 20%
+                        </a>
+                        <a href="#science" class="text-sm font-semibold text-clinical-800 hover:text-clinical-900 flex items-center gap-1 group py-2">
+                            Explore the Biotech science 
+                            <i data-lucide="arrow-right" class="h-4 w-4 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Image & Design -->
+                <div class="relative lg:ml-8 flex justify-center items-center">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-clinical-100/50 to-gold-100/30 rounded-full blur-3xl filter -z-10 animate-pulse duration-5000"></div>
+                    <div class="relative max-w-sm sm:max-w-md bg-white p-4 rounded-3xl glow-effect border border-slate-100/80">
+                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800" 
+                             alt="AURA EXOSOME Serum Bottle" 
+                             class="rounded-2xl shadow-inner w-full object-cover aspect-[4/5] object-center">
+                        
+                        <!-- Mini badge on image -->
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center space-x-3 hidden sm:flex max-w-xs">
+                            <div class="bg-clinical-100 p-2.5 rounded-xl">
+                                <i data-lucide="shield-check" class="h-6 w-6 text-clinical-800"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">Clinical Standards</p>
+                                <p class="text-sm font-semibold text-clinical-900">Dermatologist Tested</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- THE SCIENCE SECTION -->
+    <section id="science" class="py-20 lg:py-32 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+                <p class="text-xs font-bold tracking-widest text-gold-600 uppercase">The Regenerative Paradigm</p>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-clinical-900 leading-tight">
+                    Beyond Traditional Skincare. <br class="hidden sm:block">Welcome to Cellular Biotech.
+                </h2>
+                <div class="w-12 h-1 bg-gold-500 mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Science Point 1 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 hover:shadow-xl transition-all duration-300">
+                    <div class="bg-clinical-50 w-12 h-12 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="dna" class="h-6 w-6 text-clinical-800"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-clinical-900 mb-3">Cell Signaling Tech</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Exosomes act as intercellular messengers, sending precise chemical instructions to damaged skin cells, ordering them to self-repair and produce vital structural proteins.
+                    </p>
+                </div>
+
+                <!-- Science Point 2 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 hover:shadow-xl transition-all duration-300">
+                    <div class="bg-clinical-50 w-12 h-12 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="sparkles" class="h-6 w-6 text-clinical-800"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-clinical-900 mb-3">Collagen Overdrive</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Instead of injecting artificial volume, our formula stimulates your body's natural collagen synthesis engine, leading to true structural lift and resilience.
+                    </p>
+                </div>
+
+                <!-- Science Point 3 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 hover:shadow-xl transition-all duration-300">
+                    <div class="bg-clinical-50 w-12 h-12 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="shield" class="h-6 w-6 text-clinical-800"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-clinical-900 mb-3">Microbiome Defense</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Synergized with natural antioxidants, the serum reinforces the natural skin barrier, lowering overall sensitivity and neutralizing everyday environmental hazards.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INGREDIENTS SECTION (Interactive) -->
+    <section id="ingredients" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Image Side -->
+                <div class="relative flex justify-center">
+                    <div class="absolute inset-0 bg-clinical-50/50 rounded-3xl transform rotate-3 -z-10 scale-105"></div>
+                    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&q=80&w=800" 
+                         alt="Scientific formulation of Aura Exosome" 
+                         class="rounded-3xl shadow-lg w-full object-cover aspect-video sm:aspect-square object-center max-w-md">
+                </div>
+
+                <!-- Content & Tabs Side -->
+                <div class="space-y-8">
+                    <div class="space-y-4 text-center lg:text-left">
+                        <p class="text-xs font-bold tracking-widest text-gold-600 uppercase">Ingredient Transparency</p>
+                        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-clinical-900 leading-tight">
+                            The Synergy of Biotech and Nature.
+                        </h2>
+                    </div>
+
+                    <!-- Interactive Ingredient Tabs -->
+                    <div class="space-y-4">
+                        <!-- Ingredient 1 -->
+                        <div class="ingredient-tab border border-slate-100 bg-slate-50/50 rounded-2xl p-6 transition-all duration-300 hover:bg-slate-50 active cursor-pointer" onclick="toggleIngredient(0)">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center space-x-4">
+                                    <span class="bg-clinical-800 text-white font-serif font-bold text-sm w-8 h-8 rounded-full flex items-center justify-center">1</span>
+                                    <h3 class="font-serif text-lg font-bold text-clinical-900">Biotech Plant Exosomes</h3>
+                                </div>
+                                <i data-lucide="chevron-down" class="ingredient-arrow h-5 w-5 text-slate-400 transition-transform duration-300 rotate-180"></i>
+                            </div>
+                            <div class="ingredient-content mt-4 text-sm text-slate-600 leading-relaxed">
+                                Extracted utilizing cutting-edge eco-friendly enzyme technology to preserve maximum potency. These micro-vesicles travel deep to deliver peptide and lipid signaling directly to skin cells.
+                            </div>
+                        </div>
+
+                        <!-- Ingredient 2 -->
+                        <div class="ingredient-tab border border-slate-100 rounded-2xl p-6 transition-all duration-300 hover:bg-slate-50 cursor-pointer" onclick="toggleIngredient(1)">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center space-x-4">
+                                    <span class="bg-slate-200 text-slate-700 font-serif font-bold text-sm w-8 h-8 rounded-full flex items-center justify-center">2</span>
+                                    <h3 class="font-serif text-lg font-bold text-clinical-900">Pure Centella Asiatica (Cica)</h3>
+                                </div>
+                                <i data-lucide="chevron-down" class="ingredient-arrow h-5 w-5 text-slate-400 transition-transform duration-300"></i>
+                            </div>
+                            <div class="ingredient-content mt-4 text-sm text-slate-600 leading-relaxed hidden">
+                                A high-concentration extraction of Centella Asiatica, celebrated for thousands of years as a healing staple. It dramatically cools surface redness, supports micro-circulation, and locks in rich hydration.
+                            </div>
+                        </div>
+
+                        <!-- Ingredient 3 -->
+                        <div class="ingredient-tab border border-slate-100 rounded-2xl p-6 transition-all duration-300 hover:bg-slate-50 cursor-pointer" onclick="toggleIngredient(2)">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center space-x-4">
+                                    <span class="bg-slate-200 text-slate-700 font-serif font-bold text-sm w-8 h-8 rounded-full flex items-center justify-center">3</span>
+                                    <h3 class="font-serif text-lg font-bold text-clinical-900">Triple-Weight Hyaluronic Acid</h3>
+                                </div>
+                                <i data-lucide="chevron-down" class="ingredient-arrow h-5 w-5 text-slate-400 transition-transform duration-300"></i>
+                            </div>
+                            <div class="ingredient-content mt-4 text-sm text-slate-600 leading-relaxed hidden">
+                                Three molecular weights designed to penetrate different layers of the epidermis, ensuring continuous surface plumpness and deep, multi-tier water retention.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REAL OUTCOMES & TESTIMONIALS -->
+    <section id="benefits" class="py-20 lg:py-32 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+                <p class="text-xs font-bold tracking-widest text-gold-600 uppercase">Clinical Studies & Real Voices</p>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-clinical-900 leading-tight">
+                    Proven Efficacy. True Transformation.
+                </h2>
+                <div class="w-12 h-1 bg-gold-500 mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <!-- Trust Grid / Testimonials -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 flex flex-col justify-between shadow-sm">
+                    <div class="space-y-4">
+                        <div class="flex text-gold-500 space-x-1">
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        </div>
+                        <p class="text-slate-600 italic text-sm leading-relaxed">
+                            "After 3 weeks of nightly application, my chronic redness is entirely gone. My skin feels denser, and my laugh lines are noticeably softer. This biotechnology is genuinely revolutionary."
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-full bg-clinical-100 text-clinical-800 font-bold flex items-center justify-center text-sm">
+                            EH
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-clinical-900">Dr. Elizabeth Vance</p>
+                            <p class="text-xs text-slate-400">Clinical Dermatologist</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 flex flex-col justify-between shadow-sm">
+                    <div class="space-y-4">
+                        <div class="flex text-gold-500 space-x-1">
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        </div>
+                        <p class="text-slate-600 italic text-sm leading-relaxed">
+                            "My skin has never glowed like this before. It doesn't sit on the surface like heavy creams; it absorbs completely, leaving this velvety soft-matte finish. Total TikTok favorite."
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-full bg-clinical-100 text-clinical-800 font-bold flex items-center justify-center text-sm">
+                            SL
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-clinical-900">Sophia Laurent</p>
+                            <p class="text-xs text-slate-400">Skincare Influencer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-100 flex flex-col justify-between shadow-sm">
+                    <div class="space-y-4">
+                        <div class="flex text-gold-500 space-x-1">
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        </div>
+                        <p class="text-slate-600 italic text-sm leading-relaxed">
+                            "I have highly reactive skin and can't use standard retinol formulas. This serum has given me better anti-aging results without a single day of irritation. Incredible science."
+                        </p>
+                    </div>
+                    <div class="mt-6 flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-full bg-clinical-100 text-clinical-800 font-bold flex items-center justify-center text-sm">
+                            MN
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-clinical-900">Marcus Newby</p>
+                            <p class="text-xs text-slate-400">Sensitive Skin Consumer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ROUTINE / HOW TO USE -->
+    <section id="routine" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+                <p class="text-xs font-bold tracking-widest text-gold-600 uppercase">The Daily Ritual</p>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-clinical-900 leading-tight">
+                    Optimize Your Cell Health in 3 Simple Steps.
+                </h2>
+                <div class="w-12 h-1 bg-gold-500 mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center space-y-4">
+                    <div class="bg-clinical-50 text-clinical-800 font-serif font-bold text-xl w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        01
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-clinical-900">Purify</h3>
+                    <p class="text-sm text-slate-600 max-w-xs mx-auto">
+                        Cleanse skin gently. Pat dry, leaving a tiny hint of surface moisture to help absorption.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center space-y-4">
+                    <div class="bg-clinical-50 text-clinical-800 font-serif font-bold text-xl w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        02
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-clinical-900">Apply & Signaling</h3>
+                    <p class="text-sm text-slate-600 max-w-xs mx-auto">
+                        Press 3-4 drops of Aura Exosome™ onto your face, neck, and chest. Allow 60 seconds to self-penetrate.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center space-y-4">
+                    <div class="bg-clinical-50 text-clinical-800 font-serif font-bold text-xl w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        03
+                    </div>
+                    <h3 class="font-serif text-lg font-bold text-clinical-900">Protect</h3>
+                    <p class="text-sm text-slate-600 max-w-xs mx-auto">
+                        Follow up with a lightweight moisturizer or an SPF during the day to seal the active ingredients.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRE-ORDER BLOCK -->
+    <section id="preorder" class="py-20 lg:py-32 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-0 max-w-5xl mx-auto">
+                <!-- Product Preview Image -->
+                <div class="lg:col-span-5 bg-clinical-50 relative min-h-[300px] lg:min-h-0 flex items-center justify-center">
+                    <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=800" 
+                         alt="Aura Exosome Formulation bottle detail" 
+                         class="absolute inset-0 w-full h-full object-cover object-center">
+                    <div class="absolute inset-0 bg-clinical-900/10 backdrop-brightness-[0.95]"></div>
+                </div>
+
+                <!-- Checkout Form & Details -->
+                <div class="lg:col-span-7 p-8 sm:p-12 space-y-8 flex flex-col justify-center">
+                    <div class="space-y-3">
+                        <div class="inline-flex bg-gold-100 text-gold-600 text-xs font-bold uppercase tracking-wider py-1 px-3 rounded-full">
+                            First Production Run — 20% OFF
+                        </div>
+                        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-clinical-900">
+                            Pre-Order Aura Exosome™
+                        </h2>
+                        <p class="text-sm text-slate-500">
+                            Secure your bottle from our highly limited initial biotech extraction batch. Shipping starts July 15, 2026.
+                        </p>
+                    </div>
+
+                    <!-- Pricing Display -->
+                    <div class="flex items-baseline space-x-3">
+                        <span class="text-3xl font-serif font-bold text-clinical-800">$64.00</span>
+                        <span class="text-lg text-slate-400 line-through">$80.00</span>
+                        <span class="text-xs text-emerald-600 font-bold uppercase bg-emerald-50 px-2.5 py-1 rounded-md">Save 20% ($16)</span>
+                    </div>
+
+                    <!-- Checkout Form (Visual Placeholder with logic) -->
+                    <form onsubmit="handlePreOrder(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="name" class="block text-xs font-bold text-slate-400 uppercase mb-1">Full Name</label>
+                                <input type="text" id="name" required class="w-full bg-slate-50 border border-slate-100 rounded-xl py-3 px-4 text-sm focus:outline-none focus:border-clinical-800" placeholder="Jane Doe">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-xs font-bold text-slate-400 uppercase mb-1">Email Address</label>
+                                <input type="email" id="email" required class="w-full bg-slate-50 border border-slate-100 rounded-xl py-3 px-4 text-sm focus:outline-none focus:border-clinical-800" placeholder="jane@example.com">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-clinical-800 hover:bg-clinical-900 text-white font-semibold py-4 rounded-xl transition-all duration-300 shadow-md shadow-clinical-800/10">
+                            Submit Pre-Order Reservation
+                        </button>
+                    </form>
+
+                    <!-- Trust indicators -->
+                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-100">
+                        <div class="flex items-center space-x-2 text-xs text-slate-500 font-medium">
+                            <i data-lucide="shield-check" class="h-4 w-4 text-clinical-800 flex-shrink-0"></i>
+                            <span>Secure Checkout Protocol</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-xs text-slate-500 font-medium">
+                            <i data-lucide="rotate-ccw" class="h-4 w-4 text-clinical-800 flex-shrink-0"></i>
+                            <span>30-Day Pure Money Back Guarantee</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+                <p class="text-xs font-bold tracking-widest text-gold-600 uppercase">Your Questions Answered</p>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-clinical-900 leading-tight">
+                    Frequently Asked Questions.
+                </h2>
+                <div class="w-12 h-1 bg-gold-500 mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div class="space-y-4 border-t border-slate-100 pt-6">
+                <!-- FAQ 1 -->
+                <div class="faq-item border-b border-slate-100 pb-6 cursor-pointer" onclick="toggleFaq(0)">
+                    <div class="flex justify-between items-center py-4">
+                        <h3 class="font-serif text-lg font-bold text-clinical-900">What are exosomes and how do they benefit skin?</h3>
+                        <i data-lucide="plus" class="faq-icon h-5 w-5 text-slate-400 transition-transform duration-300"></i>
+                    </div>
+                    <p class="faq-answer text-sm text-slate-600 leading-relaxed max-w-3xl hidden">
+                        Exosomes are tiny micro-vesicles released by cells that serve as microscopic messengers. Our plant-derived biotechnology mimics these messengers, delivering cellular instructions directly to aging or damaged skin cells, triggering them to produce more collagen, calm redness, and regenerate structural elements naturally.
+                    </p>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item border-b border-slate-100 pb-6 cursor-pointer" onclick="toggleFaq(1)">
+                    <div class="flex justify-between items-center py-4">
+                        <h3 class="font-serif text-lg font-bold text-clinical-900">Is this serum suitable for highly sensitive skin?</h3>
+                        <i data-lucide="plus" class="faq-icon h-5 w-5 text-slate-400 transition-transform duration-300"></i>
+                    </div>
+                    <p class="faq-answer text-sm text-slate-600 leading-relaxed max-w-3xl hidden">
+                        Yes, absolutely. Unlike harsh exfoliants, acids, or retinols that work by irritating the skin to force cell turnover, Aura Exosome works via biomimetic repair. Paired with Centella Asiatica, it acts as an intensive anti-inflammatory agent, making it safe for individuals with reactive skin, dry patches, or barrier-compromised skin.
+                    </p>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item border-b border-slate-100 pb-6 cursor-pointer" onclick="toggleFaq(2)">
+                    <div class="flex justify-between items-center py-4">
+                        <h3 class="font-serif text-lg font-bold text-clinical-900">How long does it take to see visible outcomes?</h3>
+                        <i data-lucide="plus" class="faq-icon h-5 w-5 text-slate-400 transition-transform duration-300"></i>
+                    </div>
+                    <p class="faq-answer text-sm text-slate-600 leading-relaxed max-w-3xl hidden">
+                        Many users experience surface hydration and immediate redness relief within the first 48 hours. Deeper, long-term outcomes such as skin density improvements, visual reduction in fine lines, and comprehensive barrier repair are typically noticeable within 3 to 4 weeks of continuous daily use.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-clinical-900 text-slate-400 py-16 border-t border-clinical-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand Column -->
+                <div class="space-y-4">
+                    <a href="#" class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-white">
+                        AURA <span class="font-light italic text-gold-500">EXOSOME</span>
+                    </a>
+                    <p class="text-xs text-slate-400 max-w-xs leading-relaxed">
+                        The future of skincare is here. Aura Exosome™ engineers clean, high-performance biotechnology to protect and repair your skin at its biological core.
+                    </p>
+                </div>
+
+                <!-- Nav links -->
+                <div class="space-y-4">
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider">Explore Aura</h4>
+                    <div class="flex flex-col space-y-2 text-xs">
+                        <a href="#science" class="hover:text-white transition-colors">The Biotech Science</a>
+                        <a href="#ingredients" class="hover:text-white transition-colors">Active Components</a>
+                        <a href="#benefits" class="hover:text-white transition-colors">Real-World Outcomes</a>
+                        <a href="#routine" class="hover:text-white transition-colors">How to Integrate</a>
+                    </div>
+                </div>
+
+                <!-- Contact & Legal -->
+                <div class="space-y-4">
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider">Customer Care</h4>
+                    <div class="flex flex-col space-y-2 text-xs">
+                        <a href="#" class="hover:text-white transition-colors">Track Reservation</a>
+                        <a href="#" class="hover:text-white transition-colors">Safety Regulations</a>
+                        <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+
+                <!-- Social & Newsletter -->
+                <div class="space-y-4">
+                    <h4 class="text-white text-xs font-bold uppercase tracking-wider">Stay Informed</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">Subscribe to receive early releases and clinical research digests.</p>
+                    <div class="flex space-x-2">
+                        <input type="email" class="bg-clinical-800 text-white rounded-l-md px-3 py-2 text-xs w-full focus:outline-none focus:ring-1 focus:ring-gold-500" placeholder="Your Email">
+                        <button class="bg-gold-500 text-clinical-900 px-4 py-2 text-xs font-bold rounded-r-md hover:bg-gold-600 transition-all uppercase">Join</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-clinical-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>© 2026 Aura Biotech Inc. All Rights Reserved. Not medical advice.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="instagram" class="h-4 w-4"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="twitter" class="h-4 w-4"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i data-lucide="youtube" class="h-4 w-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Responsive Mobile Menu Drawer Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuBtn.innerHTML = '<i data-lucide="x" class="h-6 w-6"></i>';
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuBtn.innerHTML = '<i data-lucide="menu" class="h-6 w-6"></i>';
+            }
+            lucide.createIcons();
+        });
+
+        // Close mobile drawer when link is clicked
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.innerHTML = '<i data-lucide="menu" class="h-6 w-6"></i>';
+                lucide.createIcons();
+            });
+        });
+
+        // Interactive Ingredient Tabs
+        function toggleIngredient(index) {
+            const tabs = document.querySelectorAll('.ingredient-tab');
+            tabs.forEach((tab, idx) => {
+                const arrow = tab.querySelector('.ingredient-arrow');
+                const content = tab.querySelector('.ingredient-content');
+                const spanNum = tab.querySelector('span');
+
+                if (idx === index) {
+                    const isClosed = content.classList.contains('hidden');
+                    if (isClosed) {
+                        content.classList.remove('hidden');
+                        tab.classList.add('bg-slate-50/50', 'border-slate-100');
+                        spanNum.classList.add('bg-clinical-800', 'text-white');
+                        spanNum.classList.remove('bg-slate-200', 'text-slate-700');
+                        arrow.style.transform = 'rotate(180deg)';
+                    } else {
+                        content.classList.add('hidden');
+                        tab.classList.remove('bg-slate-50/50', 'border-slate-100');
+                        spanNum.classList.remove('bg-clinical-800', 'text-white');
+                        spanNum.classList.add('bg-slate-200', 'text-slate-700');
+                        arrow.style.transform = 'rotate(0deg)';
+                    }
+                } else {
+                    content.classList.add('hidden');
+                    tab.classList.remove('bg-slate-50/50', 'border-slate-100');
+                    spanNum.classList.remove('bg-clinical-800', 'text-white');
+                    spanNum.classList.add('bg-slate-200', 'text-slate-700');
+                    arrow.style.transform = 'rotate(0deg)';
+                }
+            });
+        }
+
+        // Interactive FAQ Accordions
+        function toggleFaq(index) {
+            const faqs = document.querySelectorAll('.faq-item');
+            faqs.forEach((faq, idx) => {
+                const answer = faq.querySelector('.faq-answer');
+                const icon = faq.querySelector('.faq-icon');
+
+                if (idx === index) {
+                    const isClosed = answer.classList.contains('hidden');
+                    if (isClosed) {
+                        answer.classList.remove('hidden');
+                        icon.style.transform = 'rotate(45deg)';
+                        icon.style.color = '#114d4d'; // clinical-800
+                    } else {
+                        answer.classList.add('hidden');
+                        icon.style.transform = 'rotate(0deg)';
+                        icon.style.color = '#94a3b8'; // slate-400
+                    }
+                } else {
+                    answer.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                    icon.style.color = '#94a3b8';
+                }
+            });
+        }
+
+        // Handle Reservation Form Submit
+        function handlePreOrder(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            alert(`Thank you, ${name}! Your Pre-Order reservation for AURA EXOSOME™ is confirmed. We have sent details and checkout guidelines to: ${email}`);
+            
+            // Clear inputs
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+        }
+    </script>
+</body>
+</html>
