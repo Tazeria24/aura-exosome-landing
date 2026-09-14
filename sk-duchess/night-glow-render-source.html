@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SK Duchess — Night Glow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+  :root{
+    --void:#070509; --ink:#0D0910;
+    --gold:#C9A24B; --gold-lt:#F0DFAE; --gold-dim:#6E5A2C;
+    --rose:#E0457F; --rose-deep:#6E1235; --rose-mid:#A82B58;
+    --smoke:#B4A6AE;
+    --disp:"Bodoni Moda", "Didot", "Times New Roman", serif;
+    --ui:"Jost", "Futura", "Century Gothic", system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#000;}
+  #stage{
+    position:relative;width:1080px;height:1920px;overflow:hidden;
+    background:var(--void);
+    transform-origin:top left;
+  }
+  .lyr{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;}
+
+  /* ambient */
+  #bloom{
+    position:absolute;left:50%;top:44%;width:1500px;height:1500px;
+    margin-left:-750px;margin-top:-750px;border-radius:50%;
+    background:radial-gradient(circle at 50% 50%,
+      rgba(224,69,127,.42) 0%, rgba(150,26,74,.22) 28%,
+      rgba(70,10,38,.10) 48%, rgba(0,0,0,0) 68%);
+    filter:blur(10px);
+  }
+  #grain{
+    position:absolute;inset:0;opacity:.055;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+  }
+  #vig{
+    position:absolute;inset:0;
+    background:radial-gradient(ellipse 78% 62% at 50% 46%, rgba(0,0,0,0) 32%, rgba(0,0,0,.62) 78%, rgba(0,0,0,.92) 100%);
+  }
+
+  /* lockup */
+  #lock{position:absolute;left:0;width:100%;text-align:center;}
+  #rule{width:180px;height:1px;margin:0 auto;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform-origin:50% 50%;}
+  #mono{
+    font-family:var(--disp);font-weight:500;color:var(--gold-lt);
+    font-size:96px;line-height:1;letter-spacing:.02em;margin-top:26px;
+  }
+  #word{
+    font-family:var(--ui);font-weight:400;color:var(--gold);
+    font-size:25px;letter-spacing:.62em;text-indent:.62em;margin-top:22px;text-transform:uppercase;
+  }
+
+  /* product */
+  #prod{position:absolute;left:50%;top:0;width:556px;transform-origin:50% 50%;}
+  #prodInner{position:relative;width:100%;}
+  #photo{display:none;width:100%;height:820px;object-fit:contain;filter:drop-shadow(0 40px 70px rgba(0,0,0,.75));}
+  #svgBottle{display:block;width:100%;height:auto;filter:drop-shadow(0 46px 80px rgba(0,0,0,.8));}
+  #floor{
+    position:absolute;left:50%;bottom:-40px;width:470px;height:70px;margin-left:-235px;
+    background:radial-gradient(ellipse 50% 50% at 50% 50%, rgba(224,69,127,.30), rgba(0,0,0,0) 72%);
+    filter:blur(12px);
+  }
+
+  /* specs */
+  #specs{position:absolute;left:96px;width:888px;}
+  .spec{display:flex;align-items:baseline;gap:22px;padding:19px 0;border-top:1px solid rgba(201,162,75,.24);}
+  .spec:last-child{border-bottom:1px solid rgba(201,162,75,.24);}
+  .spec .k{
+    font-family:var(--ui);font-weight:500;font-size:20px;letter-spacing:.34em;
+    color:var(--gold);text-transform:uppercase;white-space:nowrap;
+  }
+  .spec .v{
+    font-family:var(--disp);font-weight:400;font-size:33px;color:#F3EAEE;
+    margin-left:auto;text-align:right;letter-spacing:.01em;
+  }
+
+  /* headline */
+  #head{
+    position:absolute;left:84px;width:912px;text-align:center;
+    font-family:var(--disp);font-weight:400;font-style:italic;
+    font-size:74px;line-height:1.12;color:#F7F1F3;letter-spacing:-.005em;
+  }
+  #head em{font-style:italic;color:var(--gold-lt);}
+
+  /* cta */
+  #cta{position:absolute;left:0;width:100%;text-align:center;}
+  #handle{
+    font-family:var(--ui);font-weight:500;font-size:38px;letter-spacing:.14em;
+    color:#FFF;text-transform:lowercase;
+  }
+  #sub{
+    font-family:var(--ui);font-weight:300;font-size:21px;letter-spacing:.42em;
+    color:var(--gold);text-transform:uppercase;margin-top:20px;text-indent:.42em;
+  }
+  #seal{
+    display:inline-flex;align-items:center;gap:14px;margin-top:34px;
+    padding:13px 30px;border:1px solid rgba(201,162,75,.45);border-radius:999px;
+  }
+  #seal span{
+    font-family:var(--ui);font-weight:400;font-size:17px;letter-spacing:.3em;
+    color:var(--gold-lt);text-transform:uppercase;text-indent:.3em;
+  }
+  /* sweep */
+  #sweep{
+    position:absolute;top:0;left:0;width:46%;height:100%;
+    background:linear-gradient(100deg, rgba(255,255,255,0) 0%, rgba(255,235,205,.10) 45%, rgba(255,255,255,0) 100%);
+  }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bloom"></div>
+
+  <div id="prod"><div id="prodInner">
+    <img id="photo" alt="">
+    <svg id="svgBottle" viewBox="0 0 400 620" xmlns="http://www.w3.org/2000/svg" aria-label="Product stand-in">
+      <defs>
+        <linearGradient id="liq" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#F0629B"/>
+          <stop offset="34%" stop-color="#D33B73"/>
+          <stop offset="70%" stop-color="#8E1B46"/>
+          <stop offset="100%" stop-color="#4E0A26"/>
+        </linearGradient>
+        <linearGradient id="glassEdge" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#FFFFFF" stop-opacity=".40"/>
+          <stop offset="16%" stop-color="#FFFFFF" stop-opacity=".05"/>
+          <stop offset="82%" stop-color="#FFFFFF" stop-opacity=".05"/>
+          <stop offset="100%" stop-color="#FFFFFF" stop-opacity=".26"/>
+        </linearGradient>
+        <linearGradient id="capG" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#241E22"/>
+          <stop offset="24%" stop-color="#4A4247"/>
+          <stop offset="60%" stop-color="#171316"/>
+          <stop offset="100%" stop-color="#2C262A"/>
+        </linearGradient>
+        <linearGradient id="ringG" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#F2E1B0"/>
+          <stop offset="46%" stop-color="#C9A24B"/>
+          <stop offset="100%" stop-color="#7A6128"/>
+        </linearGradient>
+      </defs>
+      <rect x="112" y="12" width="176" height="58" rx="11" fill="url(#capG)"/>
+      <rect x="132" y="68" width="136" height="26" rx="7" fill="#151114"/>
+      <path d="M132 94 L268 94 L288 152 Q300 186 300 224 L300 556 Q300 598 262 598 L138 598 Q100 598 100 556 L100 224 Q100 186 112 152 Z" fill="url(#liq)"/>
+      <path d="M132 94 L268 94 L288 152 Q300 186 300 224 L300 556 Q300 598 262 598 L138 598 Q100 598 100 556 L100 224 Q100 186 112 152 Z" fill="url(#glassEdge)"/>
+      <ellipse cx="200" cy="262" rx="53" ry="53" fill="none" stroke="url(#ringG)" stroke-width="2.4"/>
+      <ellipse cx="200" cy="262" rx="46" ry="46" fill="rgba(12,8,12,.30)"/>
+      <text x="200" y="279" text-anchor="middle" font-family="Bodoni Moda, Didot, serif" font-size="49" font-weight="500" fill="#EBD9A3">SK</text>
+      <rect x="146" y="346" width="108" height="2" fill="rgba(240,223,174,.55)"/>
+      <rect x="146" y="370" width="72" height="2" fill="rgba(240,223,174,.32)"/>
+      <rect x="146" y="394" width="88" height="2" fill="rgba(240,223,174,.20)"/>
+    </svg>
+    <div id="floor"></div>
+  </div></div>
+
+  <div id="lock">
+    <div id="rule"></div>
+    <div id="mono">SK</div>
+    <div id="word">Duchess Glow</div>
+  </div>
+
+  <div id="specs">
+    <div class="spec"><div class="k">Active</div><div class="v">Super L-Glutathione</div></div>
+    <div class="spec"><div class="k">With</div><div class="v">Vitamin C &middot; Collagen</div></div>
+    <div class="spec"><div class="k">Volume</div><div class="v">1000&#8202;ml</div></div>
+  </div>
+
+  <div id="head">The glow they keep<br><em>asking you about.</em></div>
+
+  <div id="cta">
+    <div id="handle">@donald.skduchess</div>
+    <div id="sub">Straight from the source</div>
+    <div id="seal"><span>Verify your batch code</span></div>
+  </div>
+
+  <div id="sweep"></div>
+  <div id="grain" class="lyr"></div>
+  <div id="vig" class="lyr"></div>
+</div>
+
+<script>
+(function(){
+  var DUR = 12.0;
+  var E = {
+    out: function(t){ return 1 - Math.pow(1-t, 3); },
+    outQuint: function(t){ return 1 - Math.pow(1-t, 5); },
+    inOut: function(t){ return t<0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2; }
+  };
+  function seg(t, a, b, ease){
+    if(t<=a) return 0; if(t>=b) return 1;
+    var u = (t-a)/(b-a);
+    return (ease||E.out)(u);
+  }
+  function lerp(a,b,u){ return a + (b-a)*u; }
+  function px(n){ return n.toFixed(2)+'px'; }
+
+  var $ = function(id){ return document.getElementById(id); };
+  var stage=$('stage'), bloom=$('bloom'), prod=$('prod'), lock=$('lock'),
+      rule=$('rule'), mono=$('mono'), word=$('word'), specs=$('specs'),
+      head=$('head'), cta=$('cta'), sweep=$('sweep'), vig=$('vig'),
+      handle=$('handle'), sub=$('sub'), seal=$('seal');
+  var specRows = Array.prototype.slice.call(document.querySelectorAll('.spec'));
+
+  function render(t){
+    // ---- lockup: centre, then travel to top
+    var appear = seg(t, 0.35, 1.5);
+    var travel = seg(t, 2.10, 3.10, E.inOut);
+
+    rule.style.opacity = seg(t, 0.25, 1.05);
+    rule.style.transform = 'scaleX(' + seg(t, 0.25, 1.25, E.outQuint).toFixed(4) + ')';
+
+    mono.style.opacity = appear;
+    mono.style.transform = 'translateY(' + px(lerp(26, 0, appear)) + ') scale(' + lerp(0.94, 1, appear).toFixed(4) + ')';
+
+    var wAppear = seg(t, 0.85, 2.00);
+    word.style.opacity = wAppear;
+    word.style.letterSpacing = lerp(0.30, 0.62, wAppear).toFixed(3) + 'em';
+
+    lock.style.top = px(lerp(742, 118, travel));
+    var lockScale = lerp(1, 0.46, travel);
+    lock.style.transform = 'scale(' + lockScale.toFixed(4) + ')';
+    lock.style.transformOrigin = '50% 0%';
+
+    // ---- bloom
+    var bIn = seg(t, 1.9, 4.4);
+    var breathe = 1 + 0.035 * Math.sin((t - 2.2) * 0.62);
+    bloom.style.opacity = (bIn * 0.95).toFixed(4);
+    bloom.style.transform = 'scale(' + (lerp(0.58, 1.0, bIn) * breathe).toFixed(4) + ')';
+
+    // ---- product rise + slow drift
+    var rise = seg(t, 2.25, 4.60, E.outQuint);
+    var drift = seg(t, 4.60, DUR, function(u){ return u; });
+    prod.style.opacity = rise.toFixed(4);
+    var pTop = lerp(516, 292, rise);
+    var pScale = lerp(1.14, 1.0, rise) * lerp(1.0, 1.045, drift);
+    var pY = lerp(150, 0, rise) - drift * 16;
+    prod.style.top = px(pTop);
+    prod.style.transform = 'translateX(-50%) translateY(' + px(pY) + ') scale(' + pScale.toFixed(4) + ')';
+
+    // ---- specs
+    specs.style.top = px(1232);
+    specRows.forEach(function(row, i){
+      var a = 5.05 + i * 0.30;
+      var u = seg(t, a, a + 1.05, E.outQuint);
+      row.style.opacity = u.toFixed(4);
+      row.style.transform = 'translateX(' + px(lerp(-46, 0, u)) + ')';
+    });
+
+    // ---- headline
+    var hIn = seg(t, 7.35, 8.85, E.outQuint);
+    head.style.top = px(1500);
+    head.style.opacity = hIn.toFixed(4);
+    head.style.transform = 'translateY(' + px(lerp(34, 0, hIn)) + ')';
+
+    // ---- cta
+    var cIn = seg(t, 9.15, 10.35, E.outQuint);
+    cta.style.top = px(1690);
+    cta.style.opacity = cIn.toFixed(4);
+    handle.style.transform = 'translateY(' + px(lerp(22, 0, cIn)) + ')';
+    sub.style.opacity = seg(t, 9.55, 10.75).toFixed(4);
+    seal.style.opacity = seg(t, 9.95, 11.15).toFixed(4);
+    seal.style.transform = 'scale(' + lerp(0.94, 1, seg(t, 9.95, 11.15, E.outQuint)).toFixed(4) + ')';
+
+    // ---- light sweep across the bottle
+    var sw = seg(t, 4.70, 6.30, E.inOut);
+    sweep.style.opacity = (sw > 0 && sw < 1 ? 1 : 0);
+    sweep.style.transform = 'translateX(' + px(lerp(-560, 1180, sw)) + ') skewX(-14deg)';
+
+    // ---- vignette settle
+    vig.style.opacity = lerp(1, 0.86, seg(t, 2.2, 4.6)).toFixed(3);
+  }
+
+  window.__render = render;
+  window.__dur = DUR;
+
+  // fit-to-screen when viewed normally
+  function fit(){
+    var pad = 0;
+    var s = Math.min(window.innerWidth / 1080, window.innerHeight / 1920);
+    stage.style.transform = 'scale(' + s + ')';
+    document.body.style.width = (1080 * s) + 'px';
+    document.body.style.height = (1920 * s) + 'px';
+    document.body.style.margin = '0 auto';
+  }
+
+  var params = new URLSearchParams(location.search);
+  if(params.has('t')){
+    // deterministic frame capture mode
+    render(parseFloat(params.get('t')));
+    window.__ready = true;
+  } else {
+    fit(); window.addEventListener('resize', fit);
+    var t0 = null;
+    function loop(ts){
+      if(t0 === null) t0 = ts;
+      var t = ((ts - t0) / 1000) % DUR;
+      render(t);
+      requestAnimationFrame(loop);
+    }
+    render(0);
+    requestAnimationFrame(loop);
+  }
+})();
+</script>
+</body>
+</html>
